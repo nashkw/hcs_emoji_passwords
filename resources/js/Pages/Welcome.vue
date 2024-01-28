@@ -59,7 +59,7 @@ defineProps({
                 <Link
                     v-if="!$page.props.auth.user && canRegister"
                     :href="route('register')"
-                    class="w-full sm:w-auto py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent bg-white text-gray-800 hover:bg-gray-200 disabled:opacity-50 disabled:pointer-events-none"
+                    class="hcs-button"
                 >
                     This is my first session
                     <svg
@@ -82,7 +82,7 @@ defineProps({
                 <Link
                     v-if="!$page.props.auth.user"
                     :href="route('login')"
-                    class="w-full sm:w-auto py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent bg-white text-gray-800 hover:bg-gray-200 disabled:opacity-50 disabled:pointer-events-none"
+                    class="hcs-button"
                 >
                     This is my second session
                     <svg
