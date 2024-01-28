@@ -35,10 +35,12 @@ defineProps({
             <div class="mt-5 flex flex-col justify-center items-center gap-2 sm:flex-row sm:gap-3">
                 <Link
                     v-if="$page.props.auth.user"
-                    :href="route('dashboard')"
-                    class="w-full sm:w-auto py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent bg-white text-gray-800 hover:bg-gray-200 disabled:opacity-50 disabled:pointer-events-none"
+                    :href="route('logout')"
+                    method="post"
+                    as="button"
+                    class="hcs-button"
                 >
-                    Dashboard
+                    Finish session
                     <svg
                         class="w-3 h-3"
                         fill="none"
