@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Auth\RememberDetailsController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -18,8 +19,10 @@ use Inertia\Inertia;
 Route::get('/', function () { return Inertia::render('Welcome'); })->name('welcome');
 
 Route::middleware('auth')->group(function () {
-    Route::get('/complete', function () { return Inertia::render('Complete'); })->name('complete');
     Route::get('/intermediary', function () { return Inertia::render('Distraction'); })->name('distraction');
+    Route::get('/remember', [RememberDetailsController::class, 'create'])->name('remember');
+    Route::post('/remember', [RememberDetailsController::class, 'store']);
+    Route::get('/complete', function () { return Inertia::render('Complete'); })->name('complete');
 });
 
 Route::middleware('auth')->group(function () {

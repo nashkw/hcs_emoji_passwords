@@ -15,11 +15,11 @@ import {Head, Link} from '@inertiajs/vue3';
             <div class="mt-5 flex flex-col justify-center items-center gap-2 sm:flex-row sm:gap-3">
                 <Link
                     v-if="$page.props.auth.user"
-                    :href="route('complete')"
+                    :href="route('remember')"
                     as="button"
                     class="hcs-button"
                 >
-                    I have finished the intermediary task.
+                    I have finished the intermediary task
                     <svg
                         class="w-3 h-3"
                         fill="none"
