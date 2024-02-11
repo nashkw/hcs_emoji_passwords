@@ -1,34 +1,17 @@
 <?php
 
-use App\Http\Controllers\Auth\RememberDetailsController;
-use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\RecallController;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
-
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
 
 Route::get('/', function () { return Inertia::render('Welcome'); })->name('welcome');
 
 Route::middleware('auth')->group(function () {
-    Route::get('/intermediary', function () { return Inertia::render('Distraction'); })->name('distraction');
-    Route::get('/remember', [RememberDetailsController::class, 'create'])->name('remember');
-    Route::post('/remember', [RememberDetailsController::class, 'store']);
-    Route::get('/complete', function () { return Inertia::render('Complete'); })->name('complete');
-});
-
-Route::middleware('auth')->group(function () {
-    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+    Route::get('/intermediary', function () { return Inertia::render('RoundOne/Distraction'); })->name('distraction');
+    Route::get('/remember', [RecallController::class, 'create'])->name('remember');
+    Route::post('/remember', [RecallController::class, 'store']);
+    Route::get('/complete-round-one', function () { return Inertia::render('RoundOne/FirstComplete'); })->name('complete1');
+    Route::get('/complete-round-two', function () { return Inertia::render('RoundTwo/SecondComplete'); })->name('complete2');
 });
 
 require __DIR__.'/auth.php';
