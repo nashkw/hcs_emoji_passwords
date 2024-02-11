@@ -22,8 +22,12 @@ const submit = () => {
     <div class="bg-slate-900 flex flex-col min-h-screen justify-center lg:p-48">
         <div class="flex flex-col text-center py-10 px-4 sm:px-6 lg:px-8 justify-center items-center">
             <h1 class="block text-2xl font-bold text-white sm:text-4xl">
-                Please enter the login details you created earlier.
+                Please enter your login details.
             </h1>
+
+            <p class="mt-3 text-lg text-gray-300">
+                Please re-enter the login details you entered previously. If you do not succeed on the first try you will have unlimited opportunities to try again. If you are unable to login and do not wish to make any further attempts please return to the evaluation form and select the "I was unable to successfully authenticate" option. All combinations of credentials you enter will be recorded and viewed by the creators of this study so please do not include any identifying details. Do not at any point enter a password that you use (or plan to use) for any accounts outside of this study.
+            </p>
 
             <form
                 class="text-start flex flex-col w-full sm:max-w-xl px-6 py-4 "

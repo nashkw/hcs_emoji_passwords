@@ -10,7 +10,7 @@ import {Head, Link} from '@inertiajs/vue3';
                 Thank you for participating
             </h1>
             <p class="mt-3 text-lg text-gray-300">
-                Thank you for participating, what you should do next is consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Dolor sit amet consectetur adipiscing. Mattis rhoncus urna neque viverra. Integer quis auctor elit sed vulputate mi sit. Lacus luctus accumsan tortor posuere. Consectetur adipiscing elit ut aliquam purus sit amet luctus. Laoreet sit amet cursus sit amet dictum sit. Odio aenean sed adipiscing diam donec adipiscing tristique risus.
+                Thank you for participating in our study. You have now completed all interactions with our software required for the second (and final) round of this study. You do not need to remember your login credentials beyond this point. Please click the button below to end your session. Once you have ended your session, you should return to the evaluation form and select the "I was able to successfully authenticate" option.
             </p>
             <div class="mt-5 flex flex-col justify-center items-center gap-2 sm:flex-row sm:gap-3">
                 <Link

@@ -38,7 +38,7 @@ class RememberDetailsController extends Controller
         RoundOneAttempt::create($data);
 
         if ($data['correct']) {
-            return redirect()->intended(RouteServiceProvider::HOME);
+            return redirect()->intended(route('complete1'));
         } else {
             throw ValidationException::withMessages([
                 'username' => trans('auth.failed'),
