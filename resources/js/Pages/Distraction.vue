@@ -3,24 +3,23 @@ import {Head, Link} from '@inertiajs/vue3';
 </script>
 
 <template>
-    <Head title="Dashboard" />
+    <Head title="Intermediary Task" />
     <div class="bg-slate-900 flex flex-col min-h-screen justify-center lg:p-48">
         <div class="flex flex-col text-center py-10 px-4 sm:px-6 lg:px-8">
             <h1 class="block text-2xl font-bold text-white sm:text-4xl">
-                Thank you for participating
+                Thank you for creating an account.
             </h1>
             <p class="mt-3 text-lg text-gray-300">
-                Thank you for participating, what you should do next is consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Dolor sit amet consectetur adipiscing. Mattis rhoncus urna neque viverra. Integer quis auctor elit sed vulputate mi sit. Lacus luctus accumsan tortor posuere. Consectetur adipiscing elit ut aliquam purus sit amet luctus. Laoreet sit amet cursus sit amet dictum sit. Odio aenean sed adipiscing diam donec adipiscing tristique risus.
+                Please navigate back to the form you were filling out previously. You will be directed to return back to this screen after completing a short task. Dolor sit amet consectetur adipiscing. Mattis rhoncus urna neque viverra. Integer quis auctor elit sed vulputate mi sit. Lacus luctus accumsan tortor posuere. Consectetur adipiscing elit ut aliquam purus sit amet luctus. Laoreet sit amet cursus sit amet dictum sit. Odio aenean sed adipiscing diam donec adipiscing tristique risus.
             </p>
             <div class="mt-5 flex flex-col justify-center items-center gap-2 sm:flex-row sm:gap-3">
                 <Link
                     v-if="$page.props.auth.user"
-                    :href="route('logout')"
-                    method="post"
+                    :href="route('complete')"
                     as="button"
                     class="hcs-button"
                 >
-                    Finish session
+                    I have finished the intermediary task.
                     <svg
                         class="w-3 h-3"
                         fill="none"

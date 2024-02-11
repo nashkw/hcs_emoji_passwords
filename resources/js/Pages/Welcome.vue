@@ -1,22 +1,5 @@
 <script setup>
 import { Head, Link } from '@inertiajs/vue3';
-
-defineProps({
-    canLogin: {
-        type: Boolean,
-    },
-    canRegister: {
-        type: Boolean,
-    },
-    laravelVersion: {
-        type: String,
-        required: true,
-    },
-    phpVersion: {
-        type: String,
-        required: true,
-    },
-});
 </script>
 
 <template>
@@ -59,7 +42,7 @@ defineProps({
                 </Link>
 
                 <Link
-                    v-if="!$page.props.auth.user && canRegister"
+                    v-if="!$page.props.auth.user"
                     :href="route('register')"
                     class="hcs-button"
                 >
