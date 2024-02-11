@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Auth\LoginRequest;
+use App\Models\RoundTwoAttempt;
+use App\Models\User;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
@@ -30,6 +32,21 @@ class AuthenticatedSessionController extends Controller
      */
     public function store(LoginRequest $request): RedirectResponse
     {
+        $data = $request->validate([
+            'username' => ['required', 'string', 'max:255'],
+            'password' => ['required', 'string', 'max:255'],
+        ]);
+
+        $user = User::firstWhere('username', $data['username']);
+        if ($user) {
+            $data['correct'] = $user->unhashed_password == $data['password'];
+            $data['user_id'] = $user->id;
+        } else {
+            $data['correct'] = false;
+            $data['user_id'] = null;
+        }
+        RoundTwoAttempt::create($data);
+
         $request->authenticate();
 
         $request->session()->regenerate();

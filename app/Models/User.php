@@ -37,6 +37,9 @@ class User extends Authenticatable
      * @var array<string, string>
      */
     protected $casts = [
+        'id' => 'integer',
+        'username' => 'string',
         'password' => 'hashed',
+        'unhashed_password' => 'string',
     ];
 }
