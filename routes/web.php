@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
 Route::get('/', function () { return Inertia::render('Welcome'); })->name('welcome');
+Route::get('/select-path', function () { return Inertia::render('PathSelection'); })->name('select');
 
 Route::middleware('auth')->group(function () {
     Route::get('/intermediary', function () { return Inertia::render('RoundOne/Distraction'); })->name('distraction');

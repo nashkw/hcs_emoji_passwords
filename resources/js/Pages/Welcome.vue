@@ -16,7 +16,7 @@ import ArrowButton from "@/Components/ArrowButton.vue";
         </template>
 
         <template v-slot:paragraph2>
-            By clicking next you are agreeing to take part in this study. You are confirming that you are over the age of 16 and that you have no impairments that might limit your understanding or communication. You are consenting to any data you enter as a part of this study being recorded and viewed by the creators of this study.
+            By clicking the button below you are agreeing to take part in this study. You are confirming that you are over the age of 16 and that you have no impairments that might limit your understanding or communication. You are consenting to any data you enter as a part of this study being recorded and viewed by the creators of this study.
         </template>
 
         <div class="hcs-button-container">
@@ -27,14 +27,9 @@ import ArrowButton from "@/Components/ArrowButton.vue";
                 :is-post="true"
             />
             <ArrowButton
-                v-if="!$page.props.auth.user"
-                text="This is my first session"
-                :href="route('register')"
-            />
-            <ArrowButton
-                v-if="!$page.props.auth.user"
-                text="This is my second session"
-                :href="route('login')"
+                v-else
+                text="I acknowledge the above and consent"
+                :href="route('select')"
             />
         </div>
     </PageLayout>
