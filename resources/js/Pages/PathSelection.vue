@@ -30,25 +30,25 @@ import ArrowButton from "@/Components/ArrowButton.vue";
                 class="w-full"
                 v-if="!$page.props.auth.user"
                 text="I am part of Group A and this is my first session"
-                :href="route('register')"
+                :href="route('a.register')"
             />
             <ArrowButton
                 class="w-full"
                 v-if="!$page.props.auth.user"
                 text="I am part of Group A and this is my second session"
-                :href="route('login')"
+                :href="route('a.login')"
             />
             <ArrowButton
                 class="w-full"
                 v-if="!$page.props.auth.user"
                 text="I am part of Group B and this is my first session"
-                :href="route('register')"
+                :href="route('b.register')"
             />
             <ArrowButton
                 class="w-full"
                 v-if="!$page.props.auth.user"
                 text="I am part of Group B and this is my second session"
-                :href="route('login')"
+                :href="route('b.login')"
             />
         </div>
     </PageLayout>

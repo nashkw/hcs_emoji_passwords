@@ -1,9 +1,9 @@
 <script setup>
-import {Head, useForm} from '@inertiajs/vue3';
-import InputError from "@/Components/InputError.vue";
-import TextInput from "@/Components/TextInput.vue";
-import InputLabel from "@/Components/InputLabel.vue";
-import SubmitButton from "@/Components/SubmitButton.vue";
+import InputError from '@/Components/InputError.vue';
+import InputLabel from '@/Components/InputLabel.vue';
+import SubmitButton from '@/Components/SubmitButton.vue';
+import TextInput from '@/Components/TextInput.vue';
+import { Head, useForm } from '@inertiajs/vue3';
 import PageLayout from "@/Layouts/PageLayout.vue";
 
 const form = useForm({
@@ -12,21 +12,21 @@ const form = useForm({
 });
 
 const submit = () => {
-    form.post(route('remember'), {
+    form.post(route('a.login'), {
         onFinish: () => form.reset('password'),
     });
 };
 </script>
 
 <template>
-    <Head title="Recall Login Details" />
+    <Head title="Log in" />
     <PageLayout>
         <template v-slot:header>
-            Please enter your login details
+            Enter your login details
         </template>
 
         <template v-slot:paragraph>
-            Please re-enter the login details you entered previously. If you do not succeed on the first try you will have unlimited opportunities to try again. If you are unable to login and do not wish to make any further attempts please return to the evaluation form and select the "I was unable to successfully authenticate" option. All combinations of credentials you enter will be recorded and viewed by the creators of this study so please do not include any identifying details. Do not at any point enter a password that you use (or plan to use) for any accounts outside of this study.
+            Please enter the login details you created during the previous session. If you do not succeed on the first try you will have unlimited opportunities to try again. If you are unable to login and do not wish to make any further attempts please return to the evaluation form and select the "I was unable to successfully authenticate" option. All combinations of credentials you enter will be recorded and viewed by the creators of this study so please do not include any identifying details. Do not at any point enter a password that you use (or plan to use) for any accounts outside of this study.
         </template>
 
         <form
@@ -64,7 +64,7 @@ const submit = () => {
 
             <SubmitButton
                 :processing="form.processing"
-                text="I have re-entered my login details"
+                text="Log in"
             />
         </form>
     </PageLayout>

@@ -18,7 +18,7 @@ import ArrowButton from "@/Components/ArrowButton.vue";
         <div class="hcs-button-container">
             <ArrowButton
                 text="I have finished the intermediary task"
-                :href="route('remember')"
+                :href="route('b.remember')"
             />
         </div>
     </PageLayout>

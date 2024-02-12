@@ -1,25 +1,25 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\GroupA;
 
+use App\Http\Controllers\Controller;
 use App\Http\Requests\LoginRequest;
 use App\Models\RoundTwoAttempt;
 use App\Models\User;
-use App\Providers\RouteServiceProvider;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Inertia\Inertia;
 use Inertia\Response;
 
-class AuthenticationController extends Controller
+class GroupAAuthenticationController extends Controller
 {
     /**
      * Display the login view.
      */
     public function create(): Response
     {
-        return Inertia::render('RoundTwo/Login');
+        return Inertia::render('GroupA/RoundTwo/Login');
     }
 
     /**
@@ -46,7 +46,7 @@ class AuthenticationController extends Controller
 
         $request->session()->regenerate();
 
-        return redirect()->intended(RouteServiceProvider::HOME);
+        return redirect()->intended(route('a.complete2'));
     }
 
     /**

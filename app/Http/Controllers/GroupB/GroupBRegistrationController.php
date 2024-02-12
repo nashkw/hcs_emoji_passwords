@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\GroupB;
 
+use App\Http\Controllers\Controller;
 use App\Models\User;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Http\RedirectResponse;
@@ -12,14 +13,14 @@ use Illuminate\Validation\Rules;
 use Inertia\Inertia;
 use Inertia\Response;
 
-class RegistrationController extends Controller
+class GroupBRegistrationController extends Controller
 {
     /**
      * Display the registration view.
      */
     public function create(): Response
     {
-        return Inertia::render('RoundOne/Register');
+        return Inertia::render('GroupB/RoundOne/Register');
     }
 
     /**
@@ -44,6 +45,6 @@ class RegistrationController extends Controller
 
         Auth::login($user);
 
-        return redirect(route('distraction'));
+        return redirect(route('b.distraction'));
     }
 }
