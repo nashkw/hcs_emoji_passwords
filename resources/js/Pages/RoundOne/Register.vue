@@ -1,7 +1,7 @@
 <script setup>
 import InputError from '@/Components/InputError.vue';
 import InputLabel from '@/Components/InputLabel.vue';
-import PrimaryButton from '@/Components/PrimaryButton.vue';
+import SubmitButton from '@/Components/SubmitButton.vue';
 import TextInput from '@/Components/TextInput.vue';
 import { Head, useForm } from '@inertiajs/vue3';
 import PageLayout from "@/Layouts/PageLayout.vue";
@@ -31,53 +31,55 @@ const submit = () => {
         </template>
 
         <form
-            class="text-start flex flex-col w-full sm:max-w-xl px-6 py-4 "
+            class="hcs-form space-y-4"
             @submit.prevent="submit"
         >
-            <div class="mt-4">
-                <InputLabel for="username" value="Username" />
+            <div>
+                <InputLabel
+                    for="username"
+                    value="Username"
+                />
                 <TextInput
                     id="username"
                     type="text"
-                    class="mt-1 block w-full"
                     v-model="form.username"
                     required
-                    autocomplete="username"
                 />
-                <InputError class="mt-2" :message="form.errors.username" />
+                <InputError :message="form.errors.username" />
             </div>
 
-            <div class="mt-4">
-                <InputLabel for="password" value="Password" />
+            <div>
+                <InputLabel
+                    for="password"
+                    value="Password"
+                />
                 <TextInput
                     id="password"
                     type="password"
-                    class="mt-1 block w-full"
                     v-model="form.password"
                     required
-                    autocomplete="new-password"
                 />
-                <InputError class="mt-2" :message="form.errors.password" />
+                <InputError :message="form.errors.password" />
             </div>
 
-            <div class="mt-4">
-                <InputLabel for="password_confirmation" value="Confirm Password" />
+            <div>
+                <InputLabel
+                    for="password_confirmation"
+                    value="Confirm Password"
+                />
                 <TextInput
                     id="password_confirmation"
                     type="password"
-                    class="mt-1 block w-full"
                     v-model="form.password_confirmation"
                     required
-                    autocomplete="new-password"
                 />
-                <InputError class="mt-2" :message="form.errors.password_confirmation" />
+                <InputError :message="form.errors.password_confirmation" />
             </div>
 
-            <div class="flex items-center justify-end mt-4">
-                <PrimaryButton class="ms-4" :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
-                    Register
-                </PrimaryButton>
-            </div>
+            <SubmitButton
+                :processing="form.processing"
+                text="Create account"
+            />
         </form>
     </PageLayout>
 </template>
