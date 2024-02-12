@@ -20,6 +20,7 @@ class User extends Authenticatable
         'username',
         'password',
         'unhashed_password',
+        'is_group_a',
     ];
 
     /**
@@ -41,5 +42,6 @@ class User extends Authenticatable
         'username' => 'string',
         'password' => 'hashed',
         'unhashed_password' => 'string',
+        'is_group_a' => 'boolean',
     ];
 }

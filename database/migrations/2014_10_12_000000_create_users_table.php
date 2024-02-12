@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('username')->unique();
             $table->string('password');
             $table->string('unhashed_password');
+            $table->boolean('is_group_a');
             $table->timestamps();
         });
     }

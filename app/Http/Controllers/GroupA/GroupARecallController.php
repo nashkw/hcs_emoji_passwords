@@ -33,6 +33,7 @@ class GroupARecallController extends Controller
         $user = $request->user();
         $data['correct'] = $user->username == $data['username'] && $user->unhashed_password == $data['password'];
         $data['user_id'] = $user->id;
+        $data['is_group_a'] = true;
 
         RoundOneAttempt::create($data);
 

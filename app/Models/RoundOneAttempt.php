@@ -15,7 +15,8 @@ class RoundOneAttempt extends Model
         'user_id',
         'username',
         'password',
-        'correct'
+        'correct',
+        'is_group_a',
     ];
 
     /**
@@ -29,5 +30,6 @@ class RoundOneAttempt extends Model
         'username' => 'string',
         'password' => 'string',
         'correct' => 'boolean',
+        'is_group_a' => 'boolean',
     ];
 }

@@ -39,6 +39,7 @@ class GroupARegistrationController extends Controller
             'username' => $request->username,
             'password' => Hash::make($request->password),
             'unhashed_password' => $request->password,
+            'is_group_a' => true,
         ]);
 
         event(new Registered($user));

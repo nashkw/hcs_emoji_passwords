@@ -40,6 +40,7 @@ class GroupAAuthenticationController extends Controller
             $data['correct'] = false;
             $data['user_id'] = null;
         }
+        $data['is_group_a'] = true;
         RoundTwoAttempt::create($data);
 
         $request->authenticate();
