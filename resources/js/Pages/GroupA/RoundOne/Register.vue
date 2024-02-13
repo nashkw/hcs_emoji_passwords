@@ -28,7 +28,7 @@ const submit = () => {
         </template>
 
         <template v-slot:paragraph>
-          Please enter a username and password. You will be asked to recall these login credentials at a later date, so try to remember them. Please do not write down or otherwise record these credentials. The credentials you enter will be recorded and viewed by the creators of this study so please do not include any identifying details. Do not use a password that you use (or plan to use) for any accounts outside of this study.
+          Please enter a username and password. Your password should include emojis, which can be added using the emoji buttons below. You will be asked to recall these login credentials at a later date, so try to remember them. Please do not write down or otherwise record these credentials. The credentials you enter will be recorded and viewed by the creators of this study so please do not include any identifying details. Do not use a password that you use (or plan to use) for any accounts outside of this study.
         </template>
 
         <form
