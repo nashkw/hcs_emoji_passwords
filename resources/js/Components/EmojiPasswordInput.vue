@@ -12,8 +12,13 @@ const passwordFocus = ref(false);
 const emojis = ['🍴', '⛱', '🎉', '🌏', '🍰', '🏙', '🏀', '❣', '🏊', '🕞', '🏓', '🍕', '🐲', '💖'];
 
 const addEmojiToPassword = (emoji) => {
-    model.value += emoji;
-    setTimeout(() => { input.value.focus(); }, 0);
+    const cursorPosition = input.value.selectionStart;
+    model.value = model.value.substring(0, cursorPosition) + emoji + model.value.substring(cursorPosition);
+    const newCursorPosition = cursorPosition + emoji.length;
+    setTimeout(() => {
+      input.value.focus();
+      input.value.setSelectionRange(newCursorPosition, newCursorPosition);
+    }, 0);
 }
 
 onMounted(() => {
