@@ -27,6 +27,30 @@
     background-color: rgb(146 64 14);
 }
 
+.hcs-emoji-button {
+    display: inline-flex;
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+    column-gap: 0.5rem;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0.5rem;
+    border-width: 1px;
+    border-color: transparent;
+    font-size: 2.25rem;
+    line-height: 2.5rem;
+    font-weight: 600;
+    color: #ffffff;
+}
+.hcs-emoji-button:hover {
+    background-color: rgb(148 163 184);
+}
+.hcs-emoji-button:focus {
+    background-color: rgb(100 116 139);
+}
+
 .hcs-button-container {
     display: flex;
     margin-top: 1.25rem;

@@ -5,6 +5,7 @@ import SubmitButton from '@/Components/SubmitButton.vue';
 import TextInput from '@/Components/TextInput.vue';
 import { Head, useForm } from '@inertiajs/vue3';
 import PageLayout from "@/Layouts/PageLayout.vue";
+import EmojiPasswordInput from "@/Components/EmojiPasswordInput.vue";
 
 const form = useForm({
     username: '',
@@ -53,11 +54,9 @@ const submit = () => {
                     for="password"
                     value="Password"
                 />
-                <TextInput
+                <EmojiPasswordInput
                     id="password"
-                    type="password"
                     v-model="form.password"
-                    required
                 />
                 <InputError :message="form.errors.password" />
             </div>
@@ -67,11 +66,9 @@ const submit = () => {
                     for="password_confirmation"
                     value="Confirm Password"
                 />
-                <TextInput
+                <EmojiPasswordInput
                     id="password_confirmation"
-                    type="password"
                     v-model="form.password_confirmation"
-                    required
                 />
                 <InputError :message="form.errors.password_confirmation" />
             </div>
