@@ -49,6 +49,7 @@ DB_PASSWORD=hcs_password
 ```
 composer install
 npm install
+npm install concurrently
 npm run reseed
 npm run start
 ```
