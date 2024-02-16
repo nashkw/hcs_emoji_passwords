@@ -51,6 +51,7 @@ composer install
 npm install
 npm install concurrently
 npm run reseed
+php artisan key:generate
 npm run start
 ```
 7. In your preferred web browser, navigate to `http://127.0.0.1:8000`.
