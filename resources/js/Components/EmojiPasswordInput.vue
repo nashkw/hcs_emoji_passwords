@@ -39,6 +39,7 @@ defineExpose({ focus: () => input.value.focus() });
             @blur="passwordFocus = false"
             ref="input"
             required
+            type="password"
         />
         <!--type="password"-->
 
